@@ -24,8 +24,8 @@
     var ver, nothing;
     if (navigator.plugins && navigator.plugins.length > 0) {
       var types = navigator.mimeTypes, type = 'application/x-shockwave-flash';
-      if (types && types[type] && types[type].enabledPlugin && types[type].enabledPlugin.description) {
-        ver = types[type].enabledPlugin.description.replace(/.*?([0-9]+)\.([0-9]+).*/, '$1,$2').split(',');
+      if (types && (type = types[type]) && type.enabledPlugin && type.enabledPlugin.description) {
+        ver = type.enabledPlugin.description.replace(/.*?([0-9]+)\.([0-9]+).*/, '$1,$2').split(',');
       }
     } else {
       try {
